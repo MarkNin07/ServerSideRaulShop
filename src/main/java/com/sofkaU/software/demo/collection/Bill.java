@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
-@Document
+@Document (collection = "bill")
 @Data
 public class Bill {
 
