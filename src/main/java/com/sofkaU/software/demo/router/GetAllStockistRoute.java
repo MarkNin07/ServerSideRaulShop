@@ -19,7 +19,7 @@ public class GetAllStockistRoute {
 
     @Bean
     public RouterFunction<ServerResponse> AllStockist(GetAllStockistsUseCase allStockists){
-        return route(GET("/get/all/categories"), request -> ServerResponse.status(HttpStatus.OK)
+        return route(GET("/get/all/stockists"), request -> ServerResponse.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromProducer(allStockists.getAllStockists(), StockistDto.class)));
     }
