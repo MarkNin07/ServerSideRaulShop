@@ -19,7 +19,7 @@ public class Bill {
     private String date;
 
     @NotBlank(message = "client cannot be blank")
-    private String client;
+    private String clientName;
 
     @NotBlank(message = "Sales person cannot be blank")
     private String salesPerson;
