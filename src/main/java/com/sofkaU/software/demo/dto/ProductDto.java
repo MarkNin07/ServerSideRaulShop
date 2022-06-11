@@ -13,7 +13,7 @@ public class ProductDto {
     private String productName;
 
     @NotBlank(message = "Product price cannot be blank")
-    private Long price;
+    private Integer price;
 
     @NotBlank(message = "Product description cannot be blank")
     private String description;

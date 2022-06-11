@@ -18,7 +18,7 @@ public class Product {
     private String productName;
 
     @NotBlank(message = "Product price cannot be blank")
-    private Long price;
+    private Integer price;
 
     @NotBlank(message = "Product description cannot be blank")
     private String description;
@@ -35,16 +35,5 @@ public class Product {
     @NotBlank(message = "Stockist name cannot be blank")
     private String stockistName;
 
-    public Product(String productId, String productName, Long price, String description,
-                   Integer minProdAmount, Integer maxProdAmount,
-                   Integer unitsAvailable, String stockistName) {
-        this.productId = productId;
-        this.productName = productName;
-        this.price = price;
-        this.description = description;
-        this.minProdAmount = minProdAmount;
-        this.maxProdAmount = maxProdAmount;
-        this.unitsAvailable = unitsAvailable;
-        this.stockistName = stockistName;
-    }
+
 }
