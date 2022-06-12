@@ -20,10 +20,7 @@ public class BillDto {
     private String salesPerson;
 
     @NotBlank(message = "Total bill cannot be blank")
-    private String totalBill;
-
-    @NotBlank(message = "Product cannot be blank")
-    private String productId;
+    private Integer totalBill;
 
     @NotBlank(message = "Product name cannot be blank")
     private String productName;

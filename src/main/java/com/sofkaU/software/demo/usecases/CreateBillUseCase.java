@@ -20,7 +20,6 @@ public class CreateBillUseCase {
                 billDto.getClientName() != null &&
                 billDto.getSalesPerson() != null &&
                 billDto.getTotalBill() != null &&
-                billDto.getProductId() != null &&
                 billDto.getProductName() != null;
     }
 
