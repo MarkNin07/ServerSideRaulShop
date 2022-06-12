@@ -1,18 +1,13 @@
-package com.sofkaU.software.demo.collection;
-
+package com.sofkaU.software.demo.dto;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
-import java.util.List;
 
-@Document (collection = "bill")
+
 @Data
-public class Bill {
+public class BillDto {
 
-    @Id
     private String billId;
 
     @NotBlank(message = "Date cannot be blank")

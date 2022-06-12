@@ -1,8 +1,10 @@
 package com.sofkaU.software.demo.mapper;
 
 
+import com.sofkaU.software.demo.collection.Bill;
 import com.sofkaU.software.demo.collection.Product;
 import com.sofkaU.software.demo.collection.Stockist;
+import com.sofkaU.software.demo.dto.BillDto;
 import com.sofkaU.software.demo.dto.ProductDto;
 import com.sofkaU.software.demo.dto.StockistDto;
 import org.modelmapper.ModelMapper;
@@ -33,6 +35,14 @@ public class ShopModelMapper {
 
     public Product toProductCollection(ProductDto productDto){
         return mapper.map(productDto, Product.class);
+    }
+
+    public BillDto toBillDto(Bill bill){
+        return mapper.map(bill, BillDto.class);
+    }
+
+    public Bill toBillCollection(BillDto billDto){
+        return mapper.map(billDto, Bill.class);
     }
 
 }
