@@ -3,6 +3,11 @@ package com.sofkaU.software.demo.router;
 
 import com.sofkaU.software.demo.dto.StockistDto;
 import com.sofkaU.software.demo.usecases.GetAllStockistsUseCase;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springdoc.core.annotations.RouterOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -18,6 +23,8 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class GetAllStockistRoute {
 
     @Bean
+    @RouterOperation(operation = @Operation(description = "All stockist ", operationId = "get all stockists", tags = "Stockist",
+            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = StockistDto.class)))))
     public RouterFunction<ServerResponse> AllStockist(GetAllStockistsUseCase allStockists){
         return route(GET("/get/all/stockists"), request -> ServerResponse.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
