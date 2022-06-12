@@ -23,7 +23,7 @@ public class BillDto {
     private String totalBill;
 
     @NotBlank(message = "Product cannot be blank")
-    private String productsId;
+    private String productId;
 
     @NotBlank(message = "Product name cannot be blank")
     private String productName;
