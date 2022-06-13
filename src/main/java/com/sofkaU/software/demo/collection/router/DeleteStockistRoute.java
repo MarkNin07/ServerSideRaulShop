@@ -1,4 +1,4 @@
-package com.sofkaU.software.demo.router;
+package com.sofkaU.software.demo.collection.router;
 
 import com.sofkaU.software.demo.dto.StockistDto;
 import com.sofkaU.software.demo.usecases.DeleteStockistUseCase;

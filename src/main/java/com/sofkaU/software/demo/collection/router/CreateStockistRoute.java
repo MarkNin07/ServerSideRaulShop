@@ -1,7 +1,9 @@
-package com.sofkaU.software.demo.router;
+package com.sofkaU.software.demo.collection.router;
 
-import com.sofkaU.software.demo.dto.BillDto;
-import com.sofkaU.software.demo.usecases.CreateBillUseCase;
+
+import com.sofkaU.software.demo.dto.ProductDto;
+import com.sofkaU.software.demo.dto.StockistDto;
+import com.sofkaU.software.demo.usecases.CreateStockistUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -18,18 +20,18 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class CreateBillRoute {
+public class CreateStockistRoute {
 
     @Bean
-    @RouterOperation(operation = @Operation(description = "Create bill ", operationId = "createBill", tags = "Bills",
-            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = BillDto.class)))))
-    public RouterFunction<ServerResponse> createBill(CreateBillUseCase createBillUseCase){
-        return route(POST("/create/bill").and(accept(MediaType.APPLICATION_JSON)),
-                request -> request.bodyToMono(BillDto.class)
-                        .flatMap(createBillUseCase::createBill)
-                        .flatMap(billDto -> ServerResponse.status(HttpStatus.CREATED)
+    @RouterOperation(operation = @Operation(description = "Create stockist ", operationId = "create stockist", tags = "Stockist",
+            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = StockistDto.class)))))
+    public RouterFunction<ServerResponse> createStockist(CreateStockistUseCase createStockist){
+        return route(POST("/create/stockist").and(accept(MediaType.APPLICATION_JSON)),
+                request -> request.bodyToMono(StockistDto.class)
+                        .flatMap(createStockist::createStockist)
+                        .flatMap(stockistDto -> ServerResponse.status(HttpStatus.CREATED)
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(billDto))
+                                .bodyValue(createStockist))
                         .onErrorResume(e -> ServerResponse.status(HttpStatus.BAD_REQUEST).build()));
     }
 }
