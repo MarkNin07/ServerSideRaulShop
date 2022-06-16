@@ -3,9 +3,11 @@ package com.sofkaU.software.demo.mapper;
 
 import com.sofkaU.software.demo.collection.Bill;
 import com.sofkaU.software.demo.collection.Product;
+import com.sofkaU.software.demo.collection.Receipt;
 import com.sofkaU.software.demo.collection.Stockist;
 import com.sofkaU.software.demo.dto.BillDto;
 import com.sofkaU.software.demo.dto.ProductDto;
+import com.sofkaU.software.demo.dto.ReceiptDto;
 import com.sofkaU.software.demo.dto.StockistDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -43,6 +45,14 @@ public class ShopModelMapper {
 
     public Bill toBillCollection(BillDto billDto){
         return mapper.map(billDto, Bill.class);
+    }
+
+    public ReceiptDto toReceiptDto(Receipt receipt){
+        return mapper.map(receipt, ReceiptDto.class);
+    }
+
+    public Receipt toReceiptCollection(ReceiptDto receiptDto){
+        return mapper.map(receiptDto, Receipt.class);
     }
 
 }

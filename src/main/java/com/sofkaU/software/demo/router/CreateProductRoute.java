@@ -1,7 +1,9 @@
-package com.sofkaU.software.demo.collection.router;
+package com.sofkaU.software.demo.router;
+
 
 import com.sofkaU.software.demo.dto.BillDto;
-import com.sofkaU.software.demo.usecases.CreateBillUseCase;
+import com.sofkaU.software.demo.dto.ProductDto;
+import com.sofkaU.software.demo.usecases.CreateProductUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -18,18 +20,19 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class CreateBillRoute {
+public class CreateProductRoute {
 
     @Bean
-    @RouterOperation(operation = @Operation(description = "Create bill ", operationId = "createBill", tags = "Bills",
-            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = BillDto.class)))))
-    public RouterFunction<ServerResponse> createBill(CreateBillUseCase createBillUseCase){
-        return route(POST("/create/bill").and(accept(MediaType.APPLICATION_JSON)),
-                request -> request.bodyToMono(BillDto.class)
-                        .flatMap(createBillUseCase::createBill)
-                        .flatMap(billDto -> ServerResponse.status(HttpStatus.CREATED)
+    @RouterOperation(operation = @Operation(description = "Create product ", operationId = "create product", tags = "Products",
+            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = ProductDto.class)))))
+    public RouterFunction<ServerResponse> createAProduct(CreateProductUseCase createProd){
+        return route(POST("/create/product").and(accept(MediaType.APPLICATION_JSON)),
+                request -> request.bodyToMono(ProductDto.class)
+                        .flatMap(createProd::createProduct)
+                        .flatMap(productDto -> ServerResponse.status(HttpStatus.CREATED)
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(billDto))
+                                .bodyValue(createProd))
                         .onErrorResume(e -> ServerResponse.status(HttpStatus.BAD_REQUEST).build()));
+
     }
 }

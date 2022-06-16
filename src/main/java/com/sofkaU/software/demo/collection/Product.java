@@ -32,8 +32,6 @@ public class Product {
     @NotBlank(message = "units available cannot be blank")
     private Integer unitsAvailable;
 
-    @NotBlank(message = "Stockist name cannot be blank")
-    private String stockistName;
-
+    private Stockist stockist;
 
 }

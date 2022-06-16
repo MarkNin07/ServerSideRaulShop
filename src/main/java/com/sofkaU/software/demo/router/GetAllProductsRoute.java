@@ -1,8 +1,7 @@
-package com.sofkaU.software.demo.collection.router;
+package com.sofkaU.software.demo.router;
 
-
-import com.sofkaU.software.demo.dto.StockistDto;
-import com.sofkaU.software.demo.usecases.GetAllStockistsUseCase;
+import com.sofkaU.software.demo.dto.ProductDto;
+import com.sofkaU.software.demo.usecases.GetAllProductsUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -20,15 +19,14 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class GetAllStockistRoute {
+public class GetAllProductsRoute {
 
     @Bean
-    @RouterOperation(operation = @Operation(description = "All stockist ", operationId = "get all stockists", tags = "Stockist",
-            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = StockistDto.class)))))
-    public RouterFunction<ServerResponse> AllStockist(GetAllStockistsUseCase allStockists){
-        return route(GET("/get/all/stockists"), request -> ServerResponse.status(HttpStatus.OK)
+    @RouterOperation(operation = @Operation(description = "allProducts ", operationId = "get all products", tags = "Products",
+            responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = ProductDto.class)))))
+    public RouterFunction<ServerResponse> AllProducts(GetAllProductsUseCase allProducts){
+        return route(GET("/get/all/products"), request -> ServerResponse.status(HttpStatus.OK)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromProducer(allStockists.getAllStockists(), StockistDto.class)));
+                .body(BodyInserters.fromProducer(allProducts.getAllProducts(), ProductDto.class)));
     }
-
 }

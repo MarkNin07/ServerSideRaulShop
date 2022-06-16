@@ -27,7 +27,6 @@ public class Bill {
     @NotBlank(message = "Total bill cannot be blank")
     private Integer totalBill;
 
-    @NotBlank(message = "Product name cannot be blank")
-    private String productName;
+    private List<Product> products;
 
 }

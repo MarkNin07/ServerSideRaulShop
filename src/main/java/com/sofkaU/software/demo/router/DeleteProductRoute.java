@@ -1,4 +1,4 @@
-package com.sofkaU.software.demo.collection.router;
+package com.sofkaU.software.demo.router;
 
 
 import com.sofkaU.software.demo.dto.ProductDto;
