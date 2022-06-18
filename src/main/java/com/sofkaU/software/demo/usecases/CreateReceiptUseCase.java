@@ -16,10 +16,7 @@ public class CreateReceiptUseCase {
     private final ShopModelMapper mapper;
 
     private boolean validateReceiptFields(ReceiptDto receiptDto){
-        return receiptDto.getReceiptId() != null &&
-                receiptDto.getQuantity() != null &&
-                receiptDto.getProduct() != null &&
-                receiptDto.getDate() != null;
+        return true;
     }
 
     private Mono<ReceiptDto> filterReceiptDto(ReceiptDto receiptDto){
