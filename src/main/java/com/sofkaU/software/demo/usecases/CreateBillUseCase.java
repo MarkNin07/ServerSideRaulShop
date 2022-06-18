@@ -20,7 +20,7 @@ public class CreateBillUseCase {
                 billDto.getClientName() != null &&
                 billDto.getSalesPerson() != null &&
                 billDto.getTotalBill() != null &&
-                billDto.getProductName() != null;
+                billDto.getProducts() != null;
     }
 
     private Mono<BillDto> filterBillDto(BillDto billDto){

@@ -22,7 +22,7 @@ public class CreateProductUseCase {
                 productDto.getMinProdAmount() != null &&
                 productDto.getMaxProdAmount() != null &&
                 productDto.getUnitsAvailable() != null &&
-                productDto.getStockistName() != null;
+                productDto.getStockist() != null;
     }
 
     private Mono<ProductDto> filterProductDto(ProductDto productDto){

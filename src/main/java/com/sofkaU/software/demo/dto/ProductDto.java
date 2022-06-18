@@ -1,5 +1,6 @@
 package com.sofkaU.software.demo.dto;
 
+import com.sofkaU.software.demo.collection.Stockist;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -27,7 +28,6 @@ public class ProductDto {
     @NotBlank(message = "units available cannot be blank")
     private Integer unitsAvailable;
 
-    @NotBlank(message = "Stockist name cannot be blank")
-    private String stockistName;
+    private Stockist stockist;
 
 }

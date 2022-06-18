@@ -24,7 +24,6 @@ public class BillDto {
     @NotBlank(message = "Total bill cannot be blank")
     private Double totalBill;
 
-    @NotBlank(message = "Product name cannot be blank")
     private List<Product> products;
 
 }

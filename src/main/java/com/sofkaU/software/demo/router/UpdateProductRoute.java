@@ -24,7 +24,7 @@ public class UpdateProductRoute {
     @RouterOperation(operation = @Operation(description = "updateProducts ", operationId = "Update Products", tags = "Products",
             responses = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = ProductDto.class)))))
     public RouterFunction<ServerResponse> updateProduct(UpdateProductUseCase updateProdUseCase){
-        return route(PUT("/update/product/").and(accept(MediaType.APPLICATION_JSON)),
+        return route(PUT("/update/product").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(ProductDto.class)
                         .flatMap(updateProdUseCase::updateProd)
                         .flatMap(productDto -> ServerResponse.status(HttpStatus.ACCEPTED)

@@ -13,8 +13,10 @@ public class Receipt {
 
     private Integer quantity;
 
+    private String date;
+
     private Product product;
 
-    private String date;
+
 
 }

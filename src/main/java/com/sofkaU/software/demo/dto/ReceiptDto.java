@@ -10,7 +10,8 @@ public class ReceiptDto {
 
     private Integer quantity;
 
+    private String date;
+
     private Product product;
 
-    private String date;
 }
