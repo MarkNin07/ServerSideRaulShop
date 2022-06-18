@@ -1,8 +1,10 @@
 package com.sofkaU.software.demo.dto;
 
+import com.sofkaU.software.demo.collection.Product;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 
 @Data
@@ -20,9 +22,9 @@ public class BillDto {
     private String salesPerson;
 
     @NotBlank(message = "Total bill cannot be blank")
-    private Integer totalBill;
+    private Double totalBill;
 
     @NotBlank(message = "Product name cannot be blank")
-    private String productName;
+    private List<Product> products;
 
 }
