@@ -31,7 +31,7 @@ public class CreateProductRoute {
                         .flatMap(createProd::createProduct)
                         .flatMap(productDto -> ServerResponse.status(HttpStatus.CREATED)
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(createProd))
+                                .bodyValue(productDto))
                         .onErrorResume(e -> ServerResponse.status(HttpStatus.BAD_REQUEST).build()));
 
     }

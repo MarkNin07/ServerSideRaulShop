@@ -16,6 +16,6 @@ public class StockistDto {
     private String stockistPersonalId;
 
     @NotBlank(message = "Phone number cannot be blank")
-    private String phoneNumber;
+    private String phoneNumber; 
 
 }

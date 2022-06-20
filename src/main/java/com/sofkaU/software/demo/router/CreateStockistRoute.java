@@ -31,7 +31,7 @@ public class CreateStockistRoute {
                         .flatMap(createStockist::createStockist)
                         .flatMap(stockistDto -> ServerResponse.status(HttpStatus.CREATED)
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .bodyValue(createStockist))
+                                .bodyValue(stockistDto))
                         .onErrorResume(e -> ServerResponse.status(HttpStatus.BAD_REQUEST).build()));
     }
 }
