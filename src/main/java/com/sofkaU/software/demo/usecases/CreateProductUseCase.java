@@ -18,6 +18,8 @@ public class CreateProductUseCase {
     private boolean validateProdFields(ProductDto productDto){
         return productDto.getProductName() != null &&
                 productDto.getPrice() != null &&
+                productDto.getSold() != null &&
+                productDto.getStock() != null &&
                 productDto.getDescription() != null &&
                 productDto.getMinProdAmount() != null &&
                 productDto.getMaxProdAmount() != null &&

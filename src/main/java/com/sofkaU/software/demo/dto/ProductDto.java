@@ -16,6 +16,10 @@ public class ProductDto {
     @NotBlank(message = "Product price cannot be blank")
     private Integer price;
 
+    private Integer sold;
+
+    private Integer stock;
+
     @NotBlank(message = "Product description cannot be blank")
     private String description;
 
