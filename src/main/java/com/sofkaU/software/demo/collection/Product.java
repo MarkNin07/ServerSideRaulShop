@@ -22,8 +22,6 @@ public class Product {
 
     private Integer sold;
 
-    private Integer stock;
-
     @NotBlank(message = "Product description cannot be blank")
     private String description;
 
