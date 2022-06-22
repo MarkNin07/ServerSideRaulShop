@@ -6,7 +6,6 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 
 @Data
-@AllArgsConstructor
 public class StockistDto {
 
     private String stockistId;
