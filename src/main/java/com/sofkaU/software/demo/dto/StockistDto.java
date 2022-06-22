@@ -1,10 +1,12 @@
 package com.sofkaU.software.demo.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 
 @Data
+@AllArgsConstructor
 public class StockistDto {
 
     private String stockistId;

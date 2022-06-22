@@ -1,9 +1,11 @@
 package com.sofkaU.software.demo.dto;
 
 import com.sofkaU.software.demo.collection.Product;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class ReceiptDto {
 
     private String receiptId;

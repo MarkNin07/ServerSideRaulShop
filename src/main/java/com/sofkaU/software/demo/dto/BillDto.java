@@ -1,6 +1,7 @@
 package com.sofkaU.software.demo.dto;
 
 import com.sofkaU.software.demo.collection.Product;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -8,6 +9,7 @@ import java.util.List;
 
 
 @Data
+@AllArgsConstructor
 public class BillDto {
 
     private String billId;

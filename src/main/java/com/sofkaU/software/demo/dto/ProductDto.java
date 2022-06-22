@@ -1,11 +1,13 @@
 package com.sofkaU.software.demo.dto;
 
 import com.sofkaU.software.demo.collection.Stockist;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 
 @Data
+@AllArgsConstructor
 public class ProductDto {
 
     private String productId;
